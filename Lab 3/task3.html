@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h2 class="my_h2">Something 1</h2>
+<h2 class="my_h2">Something 2</h2>
+<h2 class="my_h2">Something 3</h2>
+<h2 class="my_h2">Something 4</h2>
+<h2 class="my_h2">Something 5</h2>
+
+<button type="button" onclick="popup1();">Click me to see who works 1</button>
+<br>
+<br>
+<button type="button" onclick="popup2();">Click me to see who works 2</button>
+<br>
+<br>
+<button type="button" onclick="popup3();">Click me to see who works 3</button>
+<br>
+<br>
+<button type="button" onclick="popup4();">Click me to see who works 4</button>
+<br>
+<br>
+<button type="button" onclick="popup5();">Click me to see who works 5</button>
+
+<script>
+
+function popup1() {
+var x = document.getElementsByClassName('my_h2');
+x[0].innerHTML = "Button1 Changing";
+}
+
+function popup2() {
+var x = document.getElementsByClassName('my_h2');
+x[1].innerHTML = "Button2 Changing";
+}
+
+function popup3() {
+var x = document.getElementsByClassName('my_h2');
+x[2].innerHTML = "Button3 Changing";
+}
+
+function popup4() {
+var x = document.getElementsByClassName('my_h2');
+x[3].innerHTML = "Button4 Changing";
+}
+
+function popup5() {
+var x = document.getElementsByClassName('my_h2');
+x[4].innerHTML = "Button5 Changing";
+}
+</script>
+</body>
+</html>

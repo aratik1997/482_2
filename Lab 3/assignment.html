@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f2f2f2;
+    }
+
+    .form-container {
+      border: 2px solid gray;
+      padding: 30px 40px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: inline-block;
+      width: 120px;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select {
+      width: 200px;
+      padding: 5px;
+    }
+
+    input[type="submit"] {
+      margin-top: 15px;
+      padding: 8px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2 style="text-align: center;">Form Validation</h2>
+  <form id="myForm" onsubmit="return validateForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name"><br>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username"><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password"><br>
+
+    <label for="repassword">Re-type password:</label>
+    <input type="password" id="repassword"><br>
+
+    <label>Gender:</label>
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <input type="radio" name="gender" value="Other"> Other<br>
+
+    <label>Programming skills:</label>
+    <input type="checkbox" name="skills" value="Java"> Java
+    <input type="checkbox" name="skills" value="Android"> Android
+    <input type="checkbox" name="skills" value="Ruby"> Ruby
+    <input type="checkbox" name="skills" value=".Net"> .Net<br>
+
+    <label for="contact">Contact no:</label>
+    <input type="text" id="contact"><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email"><br>
+
+    <label for="college">College:</label>
+    <select id="college">
+      <option value="">Select college</option>
+      <option value="College A">College A</option>
+      <option value="College B">College B</option>
+      <option value="College C">College C</option>
+    </select><br><br>
+
+    <div style="text-align: center;">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+<script>
+function validateForm() {
+  const name = document.getElementById("name").value.trim();
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+  const repassword = document.getElementById("repassword").value;
+  const contact = document.getElementById("contact").value.trim();
+  const gender = document.querySelector('input[name="gender"]:checked');
+
+  const phoneRegex = /^(?:\+?88)?01[3-9]\d{8}$/;
+
+  if (name === "") {
+    alert("Name cannot be empty.");
+    return false;
+  }
+
+  // ✅ Fixed loop
+  for (let i = 0; i < username.length; i++) {
+    if (username[i] === ' ') {
+      alert("Username cannot be empty or contain whitespace.");
+      return false;
+    }
+  }
+
+  if (password.length < 8 || password.length > 32) {
+    alert("Password must be between 8 and 32 characters.");
+    return false;
+  }
+
+  if (password !== repassword) {
+    alert("Passwords do not match.");
+    return false;
+  }
+
+  if (!gender) {
+    alert("Please select a gender.");
+    return false;
+  }
+
+  if (!phoneRegex.test(contact)) {
+    alert("Invalid Bangladeshi phone number.");
+    return false;
+  }
+
+  alert("Form submitted successfully!");
+  return true;
+}
+
+</script>
+
+</body>
+</html>

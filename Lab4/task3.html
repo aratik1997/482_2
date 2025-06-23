@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            border: 3px solid black;
+            height: 4rem;
+            width: 20rem;
+            padding-top: 2rem;
+            text-align: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <div>Click or move the mouse pointer over this &ltdiv&gt</div>
+    <script>
+        $(document).ready(function () {
+
+           $("div").click(function () {
+            $(this).css("background-color", "blue");
+           });
+
+           $("div").hover(function () {
+            $(this).css("background-color", "green");
+           });
+
+           $("div").mouseleave(function () {
+            $(this).css("background-color", "yellow");
+           });
+            
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+</head>
+
+<body>
+    <h2 id="idheading">This is a &lth&gt. click here to hide it</h2>
+    <p class="vanish">This is a &ltp&gt.its has .vanish class</p>
+    <p>This is another &ltp&gt.</p>
+    <p id="vanish">This is a &ltp&gt. its has .vanish id</p>
+    <button class="vanish">Toggle &ltp&gt (has vanish class)</button>
+    <button>Toggle paragraphs</button>
+    <input id="idvanishbyclass" type="button" value="Toggle vanish class">
+    <input id="idvanishbyid" type="button" value="Toggle vanish id">
+    <script>
+        $(document).ready(function(){
+
+            $("button").click(function () {
+            $("p").toggle();
+        });
+        $("#idheading").click(function () {
+            $(this).hide();
+        });
+        $("#idvanishbyclass").click(function () {
+            $(".vanish").toggle();
+        });
+        $("#idvanishbyid").click(function () {
+            $("#vanish").toggle();
+        });
+
+        });
+            
+
+        
+    </script>
+</body>
+
+</html>

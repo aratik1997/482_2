@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<style>
+    div {
+        border: solid black;
+        text-align: center;
+        height: 2rem;
+        width: 20rem;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+</script>
+
+<body>
+    <h2>JavaScript Regular Expressions</h2>
+    <div id="notif"></div>
+    <form action="#">
+        <p>Input a valid email address or a BD mobile number</p>
+        <label for="email_mobile"></label>
+        <input type="text" id="email_mobile" /><br /><br />
+        <button type="button" onclick="my_checkValidity();">Test validity</button>
+    </form>
+    <script>
+        function my_checkValidity() {
+            let mobile = /^\+?(88)?0?1[3456789][0-9]{8}\b/i;
+            let email = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
+            if ($("#email_mobile").val().match(mobile)) {
+                $("#notif")
+                    .text("Valid mobile: " + $("#email_mobile").val().match(mobile))
+                    .css("backgroundColor", "lightgreen");
+            } else if ($("#email_mobile").val().match(email)) {
+                $("#notif")
+                    .text("Valid email: " + $("#email_mobile").val().match(email))
+                    .css("backgroundColor", "lightgreen");
+            } else {
+                $("#notif").text("Not valid!").css("backgroundColor", "red");
+            }
+        }
+    </script>
+</body>
+
+</html>

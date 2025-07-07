@@ -1,0 +1,3 @@
+Hello, this is a sample text file.
+When you click the "Load" button, this content will be loaded into the webpage.
+You can modify this file to test different content.

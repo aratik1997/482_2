@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast Menu</title>
+</head>
+
+<body>
+
+    <h2>Breakfast Menu</h2>
+    <div id="menu"></div>
+
+    <script type="text/javascript">
+        // Create an XMLHttpRequest object
+        var ajaxRequest = new XMLHttpRequest();
+
+        if (ajaxRequest) {
+            // Define the function to handle response
+
+            ajaxRequest.onreadystatechange = function () {
+
+                /*
+                The onreadystatechange function is executed every time the readyState changes. 
+                This allows you to track the status of the request and act accordingly (e.g., updating the UI).
+
+                readyState Values Explained
+                0	UNSENT	The request has been created but not yet opened (open() not called).
+                1	OPENED	The request has been opened, but not yet sent.
+                2	HEADERS_RECEIVED	The request has been sent, and the server's response headers have been received.
+                3	LOADING	The response body is being downloaded (partial data may be available).
+                4	DONE	The request is complete, and the full response is available.
+                */
+
+                if (ajaxRequest.readyState === 4) { // Request complete
+                    if (ajaxRequest.status === 200) { // Success
+                        processXML(ajaxRequest.responseXML);
+                    } else {
+                        alert("Request failed: " + ajaxRequest.statusText);
+                    }
+                }
+            };
+
+            // Send a GET request to fetch the XML file
+            ajaxRequest.open("GET", "breakfast.xml", true);
+            ajaxRequest.send();
+        }
+
+
+        function processXML(xmlDoc) {
+            var menuDiv = document.getElementById("menu");
+            var foods = xmlDoc.getElementsByTagName("food");
+            var menuHTML = "<ul>";
+
+            for (var i = 0; i < foods.length; i++) {
+                var name = foods[i].getElementsByTagName("name")[0].textContent;
+                var price = foods[i].getElementsByTagName("price")[0].textContent;
+                var description = foods[i].getElementsByTagName("description")[0].textContent;
+                var calories = foods[i].getElementsByTagName("calories")[0].textContent;
+
+                menuHTML += `<li>${name} - ${price}<br>
+                            ${description} <br>
+                            Calories: ${calories}</li><br>`;
+            }
+
+            menuHTML += "</ul>";
+            menuDiv.innerHTML = menuHTML; // Display the menu in the webpage
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+Announement CSE482L!
+
+<h2>Reminder: We have a project checkpoint 04: Hosting & API calls during next class!</h2>
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Name Suggestion</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="bring_suggestion.js"></script>
+</head>
+
+<body>
+
+    <h2>Live Name Suggestion</h2>
+    <input type="text" id="nameInput" placeholder="Type a name..." autocomplete="off">
+    <div id="test"></div>
+
+    <script>
+        $(document).ready(function () {
+            $('input').keyup(function () {
+                var name = $('input').val();
+                $.post("suggestion.php", { suggestion: name }, function (data, status) {
+                    $('#test').html(data);
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

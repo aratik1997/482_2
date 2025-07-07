@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p {
+            border: solid;
+            text-align: center;
+            height: 2rem;
+            width: 10rem;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $("#color").click(function () {
+                $("#p1").css("color", "red");
+            });
+
+            $("#slup").click(function () {
+                $("#p1").slideUp(3000);
+            });
+
+            $("#sldn").click(function () {
+                $("#p1").slideDown(3000);
+            });
+
+            $("#all").click(function () {
+                $("#p1").css("color", "red");
+            
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <p id="p1">faith, peace, prosperity</p>
+    <button id="color">Color</button>
+    <button id="slup">Slide Up</button>
+    <button id="sldn">Slide down</button>
+    <button id="all">All</button>
+</body>
+
+</html>

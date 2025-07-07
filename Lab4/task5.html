@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p {
+            border: solid;
+            height: 2rem;
+            width: 10rem;
+            text-align: center;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("p").hide(1000,function(){
+                    alert("The <p> already hidden now");
+                });
+                
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p>&ltp&gt to be hidden.</p>
+    <button>Hide</button>
+</body>
+
+</html>

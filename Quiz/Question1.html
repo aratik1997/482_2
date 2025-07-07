@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p {
+            border: solid;
+            text-align: center;
+            height: 2rem;
+            width: 10rem;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+    <script>
+        let i=0;
+        $(document).ready(function () {
+
+            // $("#color").click(function () {
+            //     $("#p1").css("color", "red");
+            // });
+
+            // $("#color").click(function () {
+            //     $("#p1").css("color", "red");
+            //     $("#p1").text("Turned OFF");
+            // });
+
+            while(0)
+            {
+                if(i%2!=0)
+                {
+                     $("#color").click(function () {
+                $("#p1").css("color", "red");
+                $("#p1").text("Turned OFF");
+                });
+                }
+                else
+                {
+                     $("#color").click(function () {
+                $("#p1").css("color", "Green");
+                $("#p1").text("Turned On");
+                });
+                }
+                i++;
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+    <p id="p1">Turn On</p>
+    <button id="color">Color</button>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 <html xsl:version="1.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<body
-        style="font-family:Arial;font-size:12pt;backgroundcolor:#EEEEEE">
+        style="font-family:Arial;font-size:12pt;backgroundcolor:#000000">
 		<xsl:for-each select="breakfast_menu/food">
 			<div style="background-color:teal;color:white;padding:4px">
 				<span style="font-weight:bold">

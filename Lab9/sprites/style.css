@@ -1,0 +1,27 @@
+* Resets default styling */
+.social-media-icons {
+list-style: none;
+margin : 0;
+padding: 0;
+}
+
+.social-media-icons li {
+display: inline-block;
+}
+.social-media-icons a {
+background-image: url(images/1.png), none;
+background-repeat: no-repeat;
+display: block;
+height: 58px;
+width: 50px;
+}
+/* Move the background to the right position for each social network */
+.twitter {
+background-position: -10 0;
+}
+.facebook {
+background-position: -65px 0;
+}
+.pinterest {
+background-position: -116px 0;
+}

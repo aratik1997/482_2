@@ -17,11 +17,11 @@ width: 50px;
 }
 /* Move the background to the right position for each social network */
 .twitter {
-background-position: -10 0;
+background-position: -15 0;
 }
 .facebook {
-background-position: -65px 0;
+background-position: -67px 0;
 }
 .pinterest {
-background-position: -116px 0;
+background-position: -120px 0;
 }
